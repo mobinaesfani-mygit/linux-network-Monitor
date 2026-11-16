@@ -1,0 +1,14 @@
+[Unit]
+Description=Linux Network Monitor Service
+After=network.target
+
+[Service]
+Type=simple
+User=mobina
+WorkingDirectory=/home/mobina/code/projects/linux-network-monitor
+ExecStart=/home/mobina/code/projects/linux-network-monitor/.venv/bin/python /home/mobina/code/projects/linux-network-monitor/monitor.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
